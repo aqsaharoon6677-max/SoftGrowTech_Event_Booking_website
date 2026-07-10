@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display:flex; justify-content:center; align-items:center; height:100vh; background:#f5f5f5;">
+    <div style="background:white; padding:40px; border-radius:10px; text-align:center; box-shadow:0 0 20px rgba(0,0,0,0.1);">
+        <h1> Congratulations!</h1>
+        <h2>Your booking is complete</h2>
+        <p id="details" style="font-size:18px; margin:20px 0;"></p>
+        <a href="index.html" style="background:#6c5ce7; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">Back to Home</a>
+    </div>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const event = params.get('event');
+    const tickets = params.get('tickets');
+    const email = params.get('email');
+    const ticketText = tickets == 1 ? "ticket" : "tickets";
+    
+    document.getElementById('details').innerHTML = 
+        `Thank you <strong>${name}</strong>!<br><br>
+         You booked <strong>${tickets} ${ticketText}</strong> for:<br>
+         <strong>${event}</strong><br><br>
+         Confirmation sent to: ${email}`;
+</script>
+</body>
+</html>

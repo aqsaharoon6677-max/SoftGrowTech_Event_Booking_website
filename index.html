@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Book</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<div id="welcomePopup" class="popup-overlay">
+    <div class="popup-box">
+        <span class="close-btn" id="closePopup">&times;</span>
+        <h2> Welcome to EventBook!</h2>
+        <p><p>Book Pakistan's best events here. Limited seats available!</p></p>
+        <p><strong>Special Offer:</strong> 10% off on first booking</p>
+        <a href="#events" class="btn" id="exploreBtn">Explore Events</a>
+    </div>
+</div>
+<body>
+    <body>
+    <header>
+        <nav>
+            <h1>EventBook</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#book">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Book Amazing Events With Us</h2>
+        <p>Concerts, Conferences, Workshops - All in one place</p>
+        <a href="#book" class="btn">Book Now</a>
+    </section>
+
+    <section id="events" class="events">
+    <h2>Upcoming Events</h2>
+    <div class="event-cards">
+        <div class="card">
+        <img src="image/coke-studio.jpg" alt="coke-studio Live" onclick="openModal(this.src)">
+            <h3> Coke Studio Live Lahore</h3>
+            <p>Live performance by Atif Aslam. Ali sethi and many more artists . Experience the true desi vibes!</p>
+            <p><strong>Date:</strong> 25 March 2026</p>
+            <p><strong>Venue:</strong> Expo Center, Lahore</p>
+            <p><strong>Price:</strong> Rs. 3,500</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
+        <div class="card">
+            <img src="image/psl.jpg" alt="PSL Fan Fest" onclick="openModal(this.src)">
+            <h3> PSL Fan Fest Karachi</h3>
+            <p><p>Watch the match on big screens with live commentary and food stalls. Feel the cricket fever!</p>!</p>
+            <p><strong>Date:</strong> 12 April 2026</p>
+            <p><strong>Venue:</strong> National Stadium, Karachi</p>
+            <p><strong>Price:</strong> Rs. 1,500</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
+        
+        <div class="card">
+            <img src="image/food-fest.jpg" alt="Food Festival" onclick="openModal(this.src)">
+            <h3> Lahore Food Festival</h3>
+            <p>Biryani, nihari, gol gappay, chai - everything in one place. Perfect for food lovers!</p>
+            <p><strong>Date:</strong> 5 May 2026</p>
+            <p><strong>Venue:</strong> Jilani Park, Lahore</p>
+            <p><strong>Price:</strong> Rs. 800</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
+
+        <div class="card">
+            <img src="image/tech-summit.jpg" alt="TechJuice Summit ISB" onclick="openModal(this.src)">
+            <h3> TechJuice Summit ISB</h3>
+            <p><p>Pakistani startups, AI talks, and investor meetups. The future of tech is here.</p>.</p>
+            <p><strong>Date:</strong> 20 June 2026</p>
+            <p><strong>Venue:</strong> Pak-China Center, Islamabad</p>
+            <p><strong>Price:</strong> Rs. 5,000</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
+
+        <div class="card">
+            <img src="image/fashion-week.jpg" alt="PFDC Fashion Week" onclick="openModal(this.src)" >
+            <h3> PFDC Fashion Week</h3>
+            <p>Latest collections by top Pakistani designer. A complete show of glamour and style </p>
+            <p><strong>Date:</strong> 15 July 2026</p>
+            <p><strong>Venue:</strong> Pearl Continental, Lahore</p>
+            <p><strong>Price:</strong> Rs. 8,000</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
+
+        <div class="card">
+            <img src="image/karachi-festival.jpg" alt="karachi-festival" onclick="openModal(this.src)">
+            <h3> Karachi Literature Festival</h3>
+            <p>Writers, poets, book launches. Free entry for students!</p>
+            <p><strong>Date:</strong> 10 August 2026</p>
+            <p><strong>Venue:</strong> Beach Luxury Hotel, Karachi</p>
+            <p><strong>Price:</strong> Free Entry</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
+    </div>
+</section>
+    <section id="book" class="booking-form">
+        <h2>Book Your Event</h2>
+        <form id="eventForm" action="thankyou.html" method="GET">
+            <div class="form-group">
+                <label for="name">Full Name </label>
+                <input type="text" id="name" name="name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number </label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+    <label for="event">Select Event:</label>
+    <select id="event" name="event" required>
+        <option value="">Choose an event</option>
+        <option value="Coke Studio Live Lahore - Rs. 3500">Coke Studio Live Lahore - Rs. 3,500</option>
+        <option value="PSL Fan Fest Karachi - Rs. 1500">PSL Fan Fest Karachi - Rs. 1,500</option>
+        <option value="Lahore Food Festival - Rs. 800">Lahore Food Festival - Rs. 800</option>
+        <option value="TechJuice Summit ISB - Rs. 5000">TechJuice Summit ISB - Rs. 5,000</option>
+        <option value="PFDC Fashion Week - Rs. 8000">PFDC Fashion Week - Rs. 8,000</option>
+        <option value="Karachi Literature Festival - Free">Karachi Literature Festival - Free Entry</option>
+    </select>
+    <span class="error" id="eventError"></span>
+</div>
+
+            <div class="form-group">
+                <label for="tickets">Number of Tickets </label>
+                <input type="number" id="tickets" name="tickets" min="1" required>
+                <span class="error" id="ticketsError"></span>
+            </div>
+
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+        <div id="successMsg" class="success"></div>
+    </section>
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+</body>
+</body>
+</html>
